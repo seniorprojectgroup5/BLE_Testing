@@ -103,18 +103,19 @@ public class MainActivity extends Activity {
             }});
     }
 
-
+    // generic method?
     protected void onPause() {
 // TODO Auto-generated method stub
         super.onPause();
     }
-
+    // generic method?
     @Override
     protected void onStop() {
 // TODO Auto-generated method stub
         super.onStop();
     }
 
+    // bluetooth specific?
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
@@ -151,6 +152,7 @@ public class MainActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    // generic
     /**
      * Quick way to call the Toast
      * @param str
@@ -159,6 +161,7 @@ public class MainActivity extends Activity {
         Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
     }
 
+    // ble specific
     /**
      * Initialize the List adapter
      * @param objects
@@ -176,6 +179,7 @@ public class MainActivity extends Activity {
         });
     }
 
+    // ble specific
     /**
      * Searches for paired devices. Doesn't do a scan! Only devices which are paired through Settings->Bluetooth
      * will show up with this. I didn't see any need to re-build the wheel over here
@@ -208,6 +212,7 @@ public class MainActivity extends Activity {
 
     }
 
+    // ble specific. Maybe just keep these in the main with a separate thread?
     /**
      * Custom adapter to show the current devices in the list. This is a bit of an overkill for this
      * project, but I figured it would be good learning
