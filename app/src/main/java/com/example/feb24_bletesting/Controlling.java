@@ -33,12 +33,17 @@ public class Controlling extends AppCompatActivity {
     private Button mBtnDisconnect;
     private BluetoothDevice mDevice;
 
-    final static String on="24";//on
-    final static String off="7";//off
+    final static String effct1 = "1";
+    final static String effct4 = "4";
+    final static String effct7 = "7";
+    final static String effct24 = "24";
+    final static String effct47 = "47";
+
+    final static String off = "0";
 
 
     private ProgressDialog progressDialog;
-    Button btnOn,btnOff;
+    Button btn1,btn4,btn7,btn24,btn47,btnOff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +51,14 @@ public class Controlling extends AppCompatActivity {
         setContentView(R.layout.activity_controlling);
 
         // mBtnDisconnect = (Button) findViewById(R.id.btnDisconnect);
-        btnOn=(Button)findViewById(R.id.on);
-        btnOff=(Button)findViewById(R.id.off);
 
+        btn1 = findViewById(R.id.Ebtn_1);
+        btn4 = findViewById(R.id.Ebtn_4);
+        btn7 = findViewById(R.id.Ebtn_7);
+        btn24 = findViewById(R.id.Ebtn_24);
+        btn47 = findViewById(R.id.Ebtn_47);
 
+        btnOff = findViewById(R.id.effects_off);
 
 
         Intent intent = getIntent();
@@ -60,13 +69,69 @@ public class Controlling extends AppCompatActivity {
 
         Log.d(TAG, "Ready");
 
-        btnOn.setOnClickListener(new View.OnClickListener(){
+        btn1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 try {
-                    mBTSocket.getOutputStream().write(on.getBytes());
-                    Log.d(TAG, "turned light on" + on);
+                    mBTSocket.getOutputStream().write(effct1.getBytes());
+                    Log.d(TAG, effct1);
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                try {
+                    mBTSocket.getOutputStream().write(effct4.getBytes());
+                    Log.d(TAG, effct7);
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        btn7.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                try {
+                    mBTSocket.getOutputStream().write(effct7.getBytes());
+                    Log.d(TAG, effct7);
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        btn24.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                try {
+                    mBTSocket.getOutputStream().write(effct24.getBytes());
+                    Log.d(TAG, effct24);
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        btn47.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                try {
+                    mBTSocket.getOutputStream().write(effct47.getBytes());
+                    Log.d(TAG, effct47);
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -80,7 +145,7 @@ public class Controlling extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 try {
                     mBTSocket.getOutputStream().write(off.getBytes());
-                    Log.d(TAG, "turned light off: " + off);
+                    Log.d(TAG, effct47);
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();

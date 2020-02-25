@@ -100,8 +100,7 @@ public class MainActivity extends Activity {
                 intent.putExtra(DEVICE_UUID, mDeviceUUID.toString());
                 intent.putExtra(BUFFER_SIZE, mBufferSize);
                 startActivity(intent);
-            }
-        });
+            }});
     }
 
 
